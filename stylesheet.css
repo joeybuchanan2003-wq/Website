@@ -1,0 +1,22 @@
+
+body {
+    background-color: red;
+    font-family: Arial, sans-serif;
+}
+
+
+div {
+    width: 80%;
+    margin: 20px auto;
+    background-color: goldenrod;
+    padding: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.highlighted {
+    background-color: pink;
+    color: blue;
+    padding: 10px;
+    border-radius: 5px;
+}
