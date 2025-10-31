@@ -8,8 +8,8 @@
 <style>
 
     .notes textarea {
-  width: 100%;        /* full width of container */
-  height: 250px;      /* taller box */
+  width: 100%;
+  height: 250px;
   background-color: #1A1A1D;
   color: #E0D8B0;
   border: 1px solid #3A3A3F;
@@ -17,7 +17,7 @@
   padding: 15px;
   font-family: 'Merriweather', serif;
   font-size: 1em;
-  resize: vertical;   /* allow vertical resizing */
+  resize: vertical;
 }
 header {
             background-color: #1A1A1D;
@@ -47,10 +47,7 @@ header {
             text-decoration: underline;
         }
 
-
-
 </style>
-
 
 </head>
 <body>
@@ -61,6 +58,7 @@ header {
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="../players.html">Player Characters</a></li>
                 <li><a href="../cities.html">Locations</a></li>
+                <li><a href="../map/map.html">Map</a></li>
             </ul>
         </nav>
     </header>
@@ -72,12 +70,12 @@ header {
 
 <div class="city-content">
   <div class="section">
-    <h2>📜 Lore</h2>
-    <p> Valdaris, located on the north edge of the Secia kingdom, is the 2nd capital of The Ardent Empire. </p>
+    <h2>Lore</h2>
+    <p> Valdaris, located on the north edge of the Secia kingdom, is the 2nd capital of The Ardent Empire. Known as the Obsidian Crown due to the black stone that makes up the cities streets and the current king's throne </p>
   </div>
 
   <div class="section">
-    <h2>🏰 Notable Locations</h2>
+    <h2>Notable Locations</h2>
     <ul>
       <li><!-- Location 1 --></li>
       <li><!-- Location 2 --></li>
@@ -86,7 +84,7 @@ header {
   </div>
 
   <div class="section">
-    <h2>👥 Key NPCs</h2>
+    <h2>Key NPCs</h2>
     <div class="npc">
       <strong><!-- NPC Name --></strong> — <!-- NPC Description -->
     </div>
@@ -96,12 +94,12 @@ header {
   </div>
 
   <div class="section notes">
-    <h2>🗒️ Player Notes</h2>
+    <h2>Player Notes</h2>
     <textarea id="notes" placeholder="Write notes here..."></textarea>
     <button id="saveNotes">Save Notes</button>
   </div>
 
-  <a href="index.html" class="back-link">⬅ Back to Campaign Map</a>
+  <a href="../map/map.html" class="back-link">⬅ Back to Campaign Map</a>
 </div>
 
 <script>
