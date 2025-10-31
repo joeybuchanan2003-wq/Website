@@ -1,6 +1,6 @@
 
 body {
-    background-color: red;
+    background-color: #1A1A1D;
     font-family: Arial, sans-serif;
 }
 
@@ -8,15 +8,15 @@ body {
 div {
     width: 80%;
     margin: 20px auto;
-    background-color: goldenrod;
+    background-color: #8B0000;
     padding: 20px;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 .highlighted {
-    background-color: pink;
-    color: blue;
+    background-color: #C0A060;
+    color: #4E342E;
     padding: 10px;
     border-radius: 5px;
 }
