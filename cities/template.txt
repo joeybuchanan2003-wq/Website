@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Name</title>
+<link rel="stylesheet" href="../stylesheet.css">
+<style>
+
+    .notes textarea {
+  width: 100%;        /* full width of container */
+  height: 250px;      /* taller box */
+  background-color: #1A1A1D;
+  color: #E0D8B0;
+  border: 1px solid #3A3A3F;
+  border-radius: 5px;
+  padding: 15px;
+  font-family: 'Merriweather', serif;
+  font-size: 1em;
+  resize: vertical;   /* allow vertical resizing */
+}
+
+
+</style>
+
+
+</head>
+<body>
+
+<div class="city-banner">
+  <h1>City Name</h1>
+  <p><em>City Motto / Tagline</em></p>
+</div>
+
+<div class="city-content">
+  <div class="section">
+    <h2>📜 Lore</h2>
+    <p><!-- Insert city lore here --></p>
+  </div>
+
+  <div class="section">
+    <h2>🏰 Notable Locations</h2>
+    <ul>
+      <li><!-- Location 1 --></li>
+      <li><!-- Location 2 --></li>
+      <li><!-- Location 3 --></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>👥 Key NPCs</h2>
+    <div class="npc">
+      <strong><!-- NPC Name --></strong> — <!-- NPC Description -->
+    </div>
+    <div class="npc">
+      <strong><!-- NPC Name --></strong> — <!-- NPC Description -->
+    </div>
+  </div>
+
+  <div class="section notes">
+    <h2>🗒️ Player Notes</h2>
+    <textarea id="notes" placeholder="Write notes here..."></textarea>
+    <button id="saveNotes">Save Notes</button>
+  </div>
+
+  <a href="index.html" class="back-link">⬅ Back to Campaign Map</a>
+</div>
+
+<script>
+  const notesKey = 'city_notes';
+  const textarea = document.getElementById('notes');
+  const saveButton = document.getElementById('saveNotes');
+
+  textarea.value = localStorage.getItem(notesKey) || '';
+
+  saveButton.addEventListener('click', () => {
+    localStorage.setItem(notesKey, textarea.value);
+    alert('Notes saved!');
+  });
+</script>
+</body>
+</html>

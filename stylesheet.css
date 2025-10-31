@@ -1,22 +1,119 @@
+/* === D&D Themed Stylesheet === */
+/* Fonts: consider pairing 'Cinzel' (for headings) and 'Merriweather' (for body) */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Merriweather&display=swap');
 
-body {
-    background-color: #1A1A1D;
-    font-family: Arial, sans-serif;
+:root {
+    --bg-dark: #1A1A1D;
+    --text-primary: #E0D8B0;
+    --text-secondary: #B3A87F;
+    --accent-red: #8B0000;
+    --accent-gold: #C0A060;
+    --accent-hover: #E94F37;
+    --border-color: #3A3A3F;
 }
 
+/* === Base Layout === */
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Merriweather', serif;
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
 
+/* === Containers === */
 div {
     width: 80%;
     margin: 20px auto;
-    background-color: #8B0000;
+    background-color: var(--accent-red);
     padding: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+    border: 1px solid var(--border-color);
+}
+
+/* === Headings === */
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid var(--accent-gold);
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #D4AF37;
+}
+
+h3 {
+    font-size: 1.3em;
+    color: var(--text-secondary);
+}
+
+/* === Text Elements === */
+p {
+    color: var(--text-primary);
+    margin-bottom: 15px;
 }
 
 .highlighted {
-    background-color: #C0A060;
-    color: #4E342E;
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
     padding: 10px;
     border-radius: 5px;
+    font-weight: bold;
+}
+
+/* === Links & Buttons === */
+a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-hover);
+    text-shadow: 0 0 5px var(--accent-hover);
+}
+
+button {
+    background-color: var(--accent-gold);
+    color: var(--bg-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-hover);
+    color: #fff;
+    box-shadow: 0 0 10px var(--accent-hover);
+}
+
+/* === Borders, Lines, and Details === */
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--accent-gold);
+    margin: 20px 0;
+    opacity: 0.5;
+}
+
+/* === Utility === */
+.center {
+    text-align: center;
 }
