@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Topaz Gold Rock</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <style>
+    /* Re-using the same styles from your other pages */
+    .notes textarea {
+      width: 95%;
+      height: 250px;
+      background-color: #1A1A1D;
+      color: #E0D8B0;
+      border: 1px solid #3A3A3F;
+      border-radius: 5px;
+      padding: 15px;
+      font-family: 'Merriweather', serif;
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    header {
+      background-color: #1A1A1D;
+      color: gold;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    header a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    /* Using 'player-banner' and 'player-content' classes */
+    .player-banner {
+      background-color: #333; /* Example color */
+      color: #E0D8B0;
+      padding: 30px 20px;
+      text-align: center;
+      border-bottom: 3px solid gold;
+    }
+
+    .player-banner h1 {
+      margin: 0;
+      font-size: 3em;
+    }
+
+    .player-banner p {
+      margin: 5px 0 0;
+      font-size: 1.2em;
+      font-style: italic;
+    }
+
+    .player-content {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #222225; /* Matching style */
+      border-radius: 8px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #3A3A3F;
+      padding-bottom: 10px;
+      color: gold;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Ardent Empire</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../players.html">Player Characters</a></li>
+        <li><a href="../cities.html">Locations</a></li>
+        <li><a href="../map/map.html">Map</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="player-banner">
+    <h1>Topaz Gold Rock</h1>
+    <p><em>Known publicly as "Brother Rock"</em></p>
+  </div>
+
+  <div class="player-content">
+    <div class="section">
+      <h2>Public Reputation</h2>
+      <p>Known publicly as <strong>"Brother Rock,"</strong> his full name is <strong>Topaz Gold Rock</strong>. He is a devout and steadfast cleric of <strong>Jorvik's Light</strong>. He carries himself with the quiet dignity of his draconic heritage, marked by his family's <strong>Topaz</strong> scales and the <strong>Gold</strong> rank stone embedded in his scales. He is a veteran of the King's Military, and his experience in the war has made him a pragmatic and skilled healer, respected for his ability to mend wounds with both cleric magic and non-magical skill (Healer feat).</p>
+      <p>He is outspoken in his faith, but is also famously critical of Paladins, whom he seems to hold in low regard. In the town of Oakenfort, he is known as a former town guard and a local hero.</p>
+    </div>
+
+    <div class="section">
+      <h2>Known History</h2>
+      <p>Born into the Topaz clutch, Rock joined the King's Military at the young age of 16. His natural talent for healing magic saw him trained as a cleric. At only 17, he was deployed to the southern continent and was present for the <strong>Battle of Saint Arcade</strong>. He is a survivor of the infamous surprise demon assault on the city, an event that clearly marked him.</p>
+      <p>Following his military service, he transferred to the quiet town of <strong>Oakenfort</strong> to recover from the war and work through his grief. He served for a time as a member of the town guard, a position that led to him being in the right place at the right time to help save the Grogger's Fest from a goblin raid.</p>
+    </div>
+
+    <div class="section">
+      <h2>Known Goals</h2>
+      <p>Rock is unwavering in his belief that his faith's patron, Jorvik, is still alive and may one day need help. His personal goals are clear and he speaks of them often: he wants to save people, to become a healer so skilled that he "never lets anyone down," and to gain enough name and stature to one day build a hold or town of his own—a place of safety and peace.</p>
+    </div>
+
+    <div class="section">
+      <h2>Notable Feats</h2>
+      <ul>
+        <li><strong>Co-Savior of Oakenfort:</strong> Alongside his companions—Auknid Von Brant, Quintorius Tusk, and Godzul Figiteer—he is celebrated for defeating the Cragfoot Goblins and saving the Grogger's Fest. A trophy, "The Saviors' Tankard," is now awarded annually in their honor.</li>
+      </ul>
+    </div>
+
+    <div class="section notes">
+      <h2>Player Notes</h2>
+      <textarea id="notes" placeholder="Write private notes, session logs, or character reminders here..."></textarea>
+      <button id="saveNotes">Save Notes</button>
+    </div>
+
+    <a href="../players.html" class="back-link">⬅ Back to Player Characters</a>
+  </div>
+
+  <script>
+    // Unique notes key for this character
+    const notesKey = 'topaz_gold_rock_notes';
+    const textarea = document.getElementById('notes');
+    const saveButton = document.getElementById('saveNotes');
+
+    textarea.value = localStorage.getItem(notesKey) || '';
+
+    saveButton.addEventListener('click', () => {
+      localStorage.setItem(notesKey, textarea.value);
+      alert('Notes saved!');
+    });
+  </script>
+</body>
+</html>

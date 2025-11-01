@@ -1,5 +1,4 @@
-/* === D&D Themed Stylesheet === */
-/* Fonts: consider pairing 'Cinzel' (for headings) and 'Merriweather' (for body) */
+
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Merriweather&display=swap');
 
 :root {
@@ -12,7 +11,7 @@
     --border-color: #3A3A3F;
 }
 
-/* === Base Layout === */
+
 body {
     background-color: var(--bg-dark);
     font-family: 'Merriweather', serif;
@@ -22,7 +21,6 @@ body {
     line-height: 1.6;
 }
 
-/* === Containers === */
 div {
     width: 80%;
     margin: 20px auto;
@@ -33,7 +31,6 @@ div {
     border: 1px solid var(--border-color);
 }
 
-/* === Headings === */
 h1, h2, h3 {
     font-family: 'Cinzel', serif;
     color: var(--accent-gold);
@@ -59,7 +56,7 @@ h3 {
     color: var(--text-secondary);
 }
 
-/* === Text Elements === */
+
 p {
     color: var(--text-primary);
     margin-bottom: 15px;
@@ -73,7 +70,6 @@ p {
     font-weight: bold;
 }
 
-/* === Links & Buttons === */
 a {
     color: var(--accent-gold);
     text-decoration: none;
@@ -104,7 +100,7 @@ button:hover {
     box-shadow: 0 0 10px var(--accent-hover);
 }
 
-/* === Borders, Lines, and Details === */
+
 hr {
     border: none;
     height: 2px;
@@ -113,7 +109,7 @@ hr {
     opacity: 0.5;
 }
 
-/* === Utility === */
+
 .center {
     text-align: center;
 }

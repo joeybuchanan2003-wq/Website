@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorvik's Landing</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <style>
+    .notes textarea {
+      width: 100%;
+      height: 250px;
+      background-color: #1A1A1D;
+      color: #E0D8B0;
+      border: 1px solid #3A1A1D;
+      border: 1px solid #3A3A3F;
+      border-radius: 5px;
+      padding: 15px;
+      font-family: 'Merriweather', serif;
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    header {
+      background-color: #1A1A1D;
+      color: gold;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    header a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Ardent Empire</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../players.html">Player Characters</a></li>
+        <li><a href="../cities.html">Locations</a></li>
+        <li><a href="../map/map.html">Map</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="city-banner">
+    <h1>Jorvik's Landing</h1>
+    <p><em>The Sea-Gate of Valdaris</em></p>
+  </div>
+
+  <div class="city-content">
+    <div class="section">
+      <h2>Lore</h2>
+      <p>Jorvik's Landing is the literal sea-gate for the capital of Valdaris. Located on the coast, this rough-and-tumble port town exists for one reason: to receive goods from the sea and send them up the vital, <strong>21-mile-long <strong>Port Road</strong></strong> to the capital. The town is a chaotic, loud, and practical place, smelling of salt, fish, and wagon grease.</p>
+      
+      <p><strong>History & Governance:</strong> The Landing was founded in unison with Valdaris, as its essential lifeline. It is not a capital and has little political power of its own. It is ruled by an Imperial <strong>Harbormaster</strong>, a military-appointed official who answers directly to the King of Valdaris. The Harbormaster's job is to protect the port, collect taxes, and ensure the Port Road remains secure and clear.</p>
+      
+      <p><strong>Geography & Economy:</strong> The town is a crescent-shaped sprawl around a deep, natural harbor. Its entire economy is logistical: longshoremen unload ships, warehouse workers sort cargo, and teamsters load wagons for the long journey inland. Fishing and shipbuilding are secondary, but still important, industries.</p>
+      
+      <p><strong>Culture & Factions:</strong> The culture is transient, hardworking, and gruff. It's a town of sailors, dockworkers, and merchants. The most powerful factions are the <strong>Imperial Harbormaster's</strong> office and the <strong>Dockworkers' Union</strong>, a tough collective that controls all labor on the wharves. The two are in a constant, delicate balance of power.</p>
+    </div>
+
+    <div class="section">
+      <h2>City Districts</h2>
+      
+      <h3>The Main Wharf</h3>
+      <p>The heart of the town. A forest of masts, cranes, and swinging cargo nets. This long stretch of wooden-and-stone docks is where ships from across the empire are moored, unloaded, and re-supplied. It is loud, chaotic, and active 24/7, lit by great torches at night.</p>
+
+      <h3>The Wagon-Ward</h3>
+      <p>This district is a massive, fortified staging ground at the mouth of the Port Road. It is filled with enormous warehouses, teamster stables, and wheelwrights. Here, cargo is sorted, taxed, and loaded onto the wagon caravans for the <strong>21-mile trek</strong> to Valdaris. The <strong>Port Road Gate</strong> is heavily guarded by the Harbormaster's men.</p>
+
+      <h3>The Salty-Row</h3>
+      <p>The "town" proper, a maze of narrow, winding streets packed with inns, taverns, ship-chandlers, and cheap housing for the dockworkers and sailors. The air is thick with the smell of cheap ale, fish stew, and damp sea air. This is where crews are hired, deals are struck, and knives are drawn.</p>
+
+      <h3>The Sea-Fort</h3>
+      <p>A grim, stone fortress built on the harbor's edge, with a commanding view of the sea entrance and the docks. This is the office of the Imperial Harbormaster and the barracks for the port's garrison. Its cannons protect the harbor from pirates, and its soldiers enforce the Harbormaster's will on the town.</p>
+    </div>
+    
+    <div class="section">
+      <h2>Key NPCs</h2>
+      <div class="npc">
+        <strong>Harbormaster Kaelen</strong> — An ex-naval officer with a face like granite and zero patience for bureaucracy. Appointed by Julius Ardent, his only concerns are the flow of cargo, the collection of taxes, and the security of the 21-mile Port Road.
+      </div>
+      <div class="npc">
+        <strong>"Boss" Magda</strong> — The unofficial queen of Jorvik's Landing. As the head of the Dockworkers' Union, she controls every crate that moves on or off a ship. She is a massive, formidable woman who can out-drink and out-think any captain on the wharf.
+      </div>
+      <div class="npc">
+        <strong>Innkeeper Zale</strong> — The proprietor of "The Sinking Cask," the most popular (and least-sank) tavern in The Salty-Row. Zale is an old sailor with a network of informants and a talent for hearing rumors before they even become rumors.
+      </div>
+    </div>
+
+    <div class="section notes">
+      <h2>Player Notes</h2>
+      <textarea id="notes" placeholder="Write notes here..."></textarea>
+      <button id="saveNotes">Save Notes</button>
+    </div>
+
+    <a href="../map/map.html" class="back-link">⬅ Back to Campaign Map</a>
+  </div>
+
+  <script>
+    const notesKey = 'jorviks_landing_notes';
+    const textarea = document.getElementById('notes');
+    const saveButton = document.getElementById('saveNotes');
+
+    textarea.value = localStorage.getItem(notesKey) || '';
+
+    saveButton.addEventListener('click', () => {
+      localStorage.setItem(notesKey, textarea.value);
+      alert('Notes saved!');
+    });
+  </script>
+</body>
+</html>

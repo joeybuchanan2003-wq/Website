@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragonsrest</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <style>
+    .notes textarea {
+      width: 100%;
+      height: 250px;
+      background-color: #1A1A1D;
+      color: #E0D8B0;
+      border: 1px solid #3A3A3F;
+      border-radius: 5px;
+      padding: 15px;
+      font-family: 'Merriweather', serif;
+      font-size: 1em;
+      resize: vertical;
+    }
+
+    header {
+      background-color: #1A1A1D;
+      color: gold;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    header li {
+      display: inline;
+      margin: 0 15px;
+    }
+
+    header a {
+      color: gold;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Ardent Empire</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../players.html">Player Characters</a></li>
+        <li><a href="../cities.html">Locations</a></li>
+        <li><a href="../map/map.html">Map</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="city-banner">
+    <h1>Dragonsrest</h1>
+    <p><em>The Great Nest</em></p>
+  </div>
+
+  <div class="city-content">
+    <div class="section">
+      <h2>Lore</h2>
+      <p>Dragonsrest is a city built within one of the wonders of the world: a single, humongous dragon's nest, miles in diameter. Believed to be the cradle of an ancient progenitor dragon, the entire city is contained within its massive, fossilized walls. The unique geography dictates the city's architecture: the center is a wide, flat basin, while the outer districts curve sharply upwards, with buildings ingeniously built into the rising slope.</p>
+      
+      <p><strong>History & Governance:</strong> The city was founded generations ago by dragonborn clans drawn to this sacred, ancient site. It is not ruled by an imperial governor but by its own monarch, the <strong>Queen Sarynthra</strong>. Unknown to most, she is an ancient true dragon who rules her devoted subjects in a flawless humanoid form. Her word is law, and her reign is absolute, viewed by the populace as divine right.</p>
+      
+      <p><strong>Population & Culture:</strong> The population of roughly 8,000 is almost entirely dragonborn. This has fostered a proud, insular culture steeped in draconic tradition, honor, and a deep reverence for their Queen. Order and hierarchy are paramount. The city's defense is the <strong>Azul Guard</strong>, an elite force of warriors who bond with and ride tamed dragons, patrolling the skies from the nest's rim.</p>
+      
+      <p><strong>Geography & Economy:</strong> The city's location is remote, making it self-sufficient. Its economy is based on its unique resources: geothermal energy from vents deep below the nest (powering its forges), rare minerals mined from the nest's walls, and the breeding and training of its draconic mounts. It trades these goods, along with its masterfully crafted weapons, for essentials it cannot produce itself.</p>
+    </div>
+
+    <div class="section">
+      <h2>City Districts</h2>
+      
+      <h3>The Clutch</h3>
+      <p>The flat, open basin at the very center of the nest. This is the city's civic and social heart. It contains the largest structures, including the royal palace, the grand market, and the main forum. The architecture here is spacious and grand, with plazas and wide avenues that stand in stark contrast to the winding streets of the outer districts.</p>
+
+      <h3>The Curve</h3>
+      <p>The largest district, encompassing the gently sloping inner walls of the great nest. This is where the majority of the populace lives and works. Buildings are built in sweeping terraces that follow the nest's curve, connected by a labyrinth of steep staircases and ramps. Homes, artisan workshops, and temples are packed tightly, creating a stunning, amphitheater-like view of the city center.</p>
+
+      <h3>The Perch</h3>
+      <p>The high, fortified rim of the nest. This is the exclusive domain of the Azul Guard. It serves as a natural wall and a launch point for the city's defenders. This district is composed of barracks, dragon rookeries, massive smithies, and great stone platforms from which the dragon riders take to the sky. It offers a breathtaking, and dizzying, view of the city below and the lands beyond.</p>
+
+      <h3>The Sub-Nest</h3>
+      <p>A network of natural caverns and excavated tunnels running beneath the nest floor. These geothermally-heated tunnels house the city's great forges, its storehouses, and a few less... savory... establishments that prefer to operate in the shadows. These tunnels are also said to be where Queen Sarynthra keeps her true hoard.</p>
+    </div>
+    
+    <div class="section">
+      <h2>Key NPCs</h2>
+      <div class="npc">
+        <strong>Queen Sarynthra</strong> — The city's ruler. In her humanoid guise, she is a magnetic and regal figure of otherworldly beauty. She is ancient, wise, and her motives are inscrutable, though she is fiercely protective of her city and its people, whom she views as her children (and property).
+      </div>
+      <div class="npc">
+        <strong>Skymarshal Kriv</strong> — The grim, scarred dragonborn commander of the Azul Guard. He is bonded to the largest and oldest dragon in the guard, a formidable beast named Cinder. Kriv is a warrior of few words, and his loyalty to the Queen is absolute.
+      </div>
+      <div class="npc">
+        <strong>Nest-Tender Orin</strong> — An ancient, blind dragonborn priest who is the city's foremost historian. He leads a faction of mystics who believe the Great Nest is a living, sacred entity. He serves as an advisor to the Queen on all spiritual matters.
+      </div>
+    </div>
+
+    <div class="section notes">
+      <h2>Player Notes</h2>
+      <textarea id="notes" placeholder="Write notes here..."></textarea>
+      <button id="saveNotes">Save Notes</button>
+    </div>
+
+    <a href="../map/map.html" class="back-link">⬅ Back to Campaign Map</a>
+  </div>
+
+  <script>
+    const notesKey = 'dragonsrest_notes';
+    const textarea = document.getElementById('notes');
+    const saveButton = document.getElementById('saveNotes');
+
+    textarea.value = localStorage.getItem(notesKey) || '';
+
+    saveButton.addEventListener('click', () => {
+      localStorage.setItem(notesKey, textarea.value);
+      alert('Notes saved!');
+    });
+  </Script>
+</body>
+</html>
