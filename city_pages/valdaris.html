@@ -50,8 +50,18 @@
   </style>
 </head>
 <body>
-
-  <div id="header-placeholder"></div>
+  <header>
+    <h1>The Ardent Empire</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../players.html">Player Characters</a></li>
+        <li><a href="../cities.html">Locations</a></li>
+        <li><a href="../map/map.html">Map</a></li>
+        <li><a href="map/map.html">Travel calculator</a></li>
+      </ul>
+    </nav>
+  </header>
 
   <div class="city-banner">
     <h1>Valdaris</h1>
@@ -168,15 +178,5 @@
       alert('Notes saved!');
     });
   </script>
-  
-  <script>
-  fetch('../fabs/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('header-placeholder').innerHTML = data;
-    });
-</script>
-
-
 </body>
 </html>
