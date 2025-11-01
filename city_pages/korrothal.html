@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Korrothal</title>
   <link rel="stylesheet" href="../stylesheet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
   <style>
     .notes textarea {
       width: 100%;
@@ -107,6 +108,17 @@
       </div>
     </div>
 
+    <div class="section dm-screen">
+      <h2>DM Screen (Secrets)</h2>
+      <button id="dmButton">Show DM Notes</button>
+
+      <div id="dmNotesContainer" style="display:none; background-color:#1a1a1d; border:1px solid gold; padding:15px; margin-top:10px; color:#E0D8B0;">
+          <pre id="dmNotesContent" style="white-space: pre-wrap; font-family: 'Merriweather', serif;"></pre>
+      </div>
+
+      <div id="encryptedData" style="display:none;">U2FsdGVkX1+WsjNeNQOUrBeRdp1/1L+GwJ+1bA/aMR9QKOcU5S6COaCqy0IFRL5c</div>
+    </div>
+
     <div class="section notes">
       <h2>Player Notes</h2>
       <textarea id="notes" placeholder="Write notes here..."></textarea>
@@ -117,6 +129,43 @@
   </div>
 
   <script>
+
+          // START: ADD THIS DECRYPTION LOGIC
+  const dmButton = document.getElementById('dmButton');
+
+  dmButton.addEventListener('click', () => {
+    const password = prompt('Enter DM Password:');
+    if (!password) return;
+
+    const encryptedText = document.getElementById('encryptedData').innerText;
+    if (!encryptedText.trim()) {
+        alert('No encrypted notes found on this page.');
+        return;
+    }
+
+    try {
+        // Try to decrypt
+        const bytes = CryptoJS.AES.decrypt(encryptedText, password);
+        const decryptedNotes = bytes.toString(CryptoJS.enc.Utf8);
+
+        if (decryptedNotes) {
+            // Success!
+            document.getElementById('dmNotesContent').innerText = decryptedNotes;
+            document.getElementById('dmNotesContainer').style.display = 'block';
+            dmButton.style.display = 'none'; // Hide button
+        } else {
+            // Password was wrong, but didn't cause an error
+            alert('Wrong Password!');
+        }
+    } catch (e) {
+        // Password was definitely wrong and caused an error
+        alert('Wrong Password!');
+        console.error(e);
+    }
+  });
+  // END: ADD THIS DECRYPTION LOGIC
+
+
     const notesKey = 'korrothal_notes';
     const textarea = document.getElementById('notes');
     const saveButton = document.getElementById('saveNotes');
