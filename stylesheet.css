@@ -5,11 +5,39 @@
     --bg-dark: #1A1A1D;
     --text-primary: #E0D8B0;
     --text-secondary: #B3A87F;
-    --accent-red: #8B0000;
+    --accent-red: #530606;
     --accent-gold: #C0A060;
     --accent-hover: #E94F37;
-    --border-color: #3A3A3F;
+    --border-color: gold;
 }
+
+header {
+            background-color: #1A1A1D;
+            color: gold;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        header a {
+            color: gold;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
 
 
 body {
@@ -28,7 +56,7 @@ div {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px #000;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
 }
 
 h1, h2, h3 {
