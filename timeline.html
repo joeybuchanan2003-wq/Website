@@ -6,9 +6,13 @@
 
     <link rel="stylesheet" href="stylesheet.css">
     <style>
+
+    body {
+        background: url('images/background.jpg') no-repeat center center fixed;
+    }
   
     .expand-box h3, .expand-box p {
-        transition: opacity 0.3s ease, max-height 0.3s ease;
+        transition: opacity 0.5s ease, max-height 0.5s ease;
         margin: 0; 
         overflow: hidden; 
     }
@@ -22,7 +26,6 @@
         opacity: 0;
         max-height: 0;
     }
-
 
     .expand-box:hover p {
         opacity: 1;
