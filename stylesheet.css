@@ -43,6 +43,8 @@ header {
 
 body {
     background: url('images/background.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
     font-family: 'Merriweather', serif;
     color: var(--text-primary);
     margin: 0;
@@ -52,6 +54,7 @@ body {
 
 div {
     background: url('images/textbackground.jpg') no-repeat center center;
+    background-size: cover;
     width: 80%;
     margin: 20px auto;
     background-color: var(--accent-red);
