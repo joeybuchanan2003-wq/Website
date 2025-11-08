@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jorvik's Light</title>
+  <link rel="stylesheet" href="../stylesheet.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <style>
+    .notes textarea {
+      width: 100%;
+      height: 250px;
+      background-color: #1A1A1D;
+      color: #E0D8B0;
+      border: 1px solid #3A3A3F;
+      border-radius: 5px;
+      padding: 15px;
+      font-family: 'Merriweather', serif;
+      font-size: 1em;
+      resize: vertical;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>The Ardent Empire</h1>
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../players.html">Player Characters</a></li>
+        <li><a href="../cities.html">Locations</a></li>
+        <li><a href="../religions.html">Religions</a></li>
+        <li><a href="../map/map.html">Map</a></li>
+        <li><a href="../travel-calculator.html">Travel calc</a></li>
+        <li><a href="../timeline.html">Timeline</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="city-banner">
+    <h1>Jorvik’s Light</h1>
+    <p><em>Followers of the Hero of Man</em></p>
+    <p><em>“We carry the Light, for He gives us strength in battle”</em></p>
+  </div>
+
+  <div class="section">
+    <h2>Lore</h2>
+    <p>Jorvik’s Light is not a traditional faith. It does not worship Jorvik as a god, nor promise divine favor. Instead, it exists to honor his example and continue the struggle he began. Jorvik is seen as the ultimate exemplar of courage, sacrifice, and determination, a hero whose battle against the Verdant Horror left a scar on the world known as the Blight. Followers believe the Blight is more than a disease—it is an active, lingering corruption that must be fought daily. Many hold hope that Jorvik still lives, perhaps trapped within the dying body of the Verdant Horror or wandering the world, weakened and waiting for aid. Every act of courage by his followers is believed to strengthen the world and bring him closer to returning.</p>
+
+    <p>The heart of Jorvik’s Light is action. Followers do not pray for salvation—they work for it. Devotion takes the form of cleansing corrupted lands, confronting blighted creatures, and protecting vulnerable communities. Courage, vigilance, and perseverance are sacred virtues. Heroism is measured by deeds, not faith alone, and anyone who acts against the Blight carries a fragment of Jorvik’s Light into the world. The religion teaches that heroism is a choice, courage is sacred, and the survival of the world depends on those willing to fight.</p>
+  </div>
+
+  <div class="section">
+    <h2>Organization & Governance</h2>
+    <p>The religion is decentralized, structured to respond to danger rather than maintain bureaucracy. Local groups, called <strong>Cells of the Light</strong>, form wherever the Blight spreads. Each cell is self-governing, led by the most capable members, and may specialize in combat, investigation, or restoration. Communication between cells is maintained through coded messages, markings on trees or stones, and messengers who carry knowledge of the Blight or relics connected to Jorvik’s battle. Despite their independence, all cells share a single mission: fight the Blight, preserve hope, and prepare for Jorvik’s potential return.</p>
+
+    <p>Internal rivalries exist and are significant. Some cells favor bold, decisive action against the Blight, believing that only great deeds will awaken Jorvik or eradicate corruption. Others advocate caution, preferring careful observation and gradual restoration to avoid worsening the situation. These differences create internal tension and offer adventurers opportunities to interact with the faith—through alliances, missions, or conflicts with competing cells.</p>
+  </div>
+
+  <div class="section">
+    <h2>Rituals & Practices</h2>
+    
+    <h3>Marking of the Verdant Path</h3>
+    <p>Followers purify corrupted land, plant protective wards, or leave symbolic offerings to signify that the area is watched and defended. These acts are both practical and symbolic, reminding participants of Jorvik’s example and responsibility to the world.</p>
+
+    <h3>Night of Vigil</h3>
+    <p>Held under the moon, members meditate on courage, review strategies, and renew their commitment to act against the Blight. This ritual trains both body and mind, preparing adherents for action.</p>
+
+    <h3>Heroic Deeds</h3>
+    <p>Any act against the Blight—protecting communities, defeating blighted creatures, restoring lands—is considered carrying a fragment of Jorvik’s Light into the world. Heroic deeds are central to the faith and demonstrate that courage is sacred and actionable.</p>
+  </div>
+
+  <div class="section">
+    <h2>Key Figures</h2>
+    <div class="npc">
+      <strong>High Sentinel Thara</strong> — A tactical leader of multiple cells in a contested region. Known for balancing aggression with caution. She is currently head of the temple in Valdaris.
+    </div>
+    <div class="npc">
+      <strong>Scout Lira</strong> — Expert tracker of Blighted zones. Her missions reveal new areas of corruption and bring vital intelligence to the faithful.
+    </div>
+    <div class="npc">
+      <strong>Healer Corven</strong> — Dedicated to restoring corrupted lands and aiding wounded followers. His methods mix practical restoration with symbolic acts of hope.
+    </div>
+    <div class="npc">
+      <strong>Brother Rock</strong> - Member of the Ardent army, and savior of groggers fest, brother rock is a respected member of the cloth.
+    </div>
+  </div>
+
+  <div class="section dm-screen">
+    <h2>DM Screen (Secrets)</h2>
+    <button id="dmButton">Show DM Notes</button>
+
+    <div id="dmNotesContainer" style="display:none; background-color:#1a1a1d; border:1px solid gold; padding:15px; margin-top:10px; color:#E0D8B0;">
+        <pre id="dmNotesContent" style="white-space: pre-wrap; font-family: 'Merriweather', serif;"></pre>
+    </div>
+
+    <div id="encryptedData" style="display:none;">U2FsdGVkX1+WsjNeNQOUrBeRdp1/1L+GwJ+1bA/aMR9QKOcU5S6COaCqy0IFRL5c</div>
+  </div>
+
+  <div class="section notes">
+    <h2>Player Notes</h2>
+    <textarea id="notes" placeholder="Write notes here..."></textarea>
+    <button id="saveNotes">Save Notes</button>
+  </div>
+
+  <a href="../religions.html" class="back-link">⬅ Back to Religions</a>
+
+  <script>
+    // DM Notes Decryption
+    const dmButton = document.getElementById('dmButton');
+
+    dmButton.addEventListener('click', () => {
+      const password = prompt('Enter DM Password:');
+      if (!password) return;
+
+      const encryptedText = document.getElementById('encryptedData').innerText;
+      if (!encryptedText.trim()) {
+          alert('No encrypted notes found on this page.');
+          return;
+      }
+
+      try {
+          const bytes = CryptoJS.AES.decrypt(encryptedText, password);
+          const decryptedNotes = bytes.toString(CryptoJS.enc.Utf8);
+
+          if (decryptedNotes) {
+              document.getElementById('dmNotesContent').innerText = decryptedNotes;
+              document.getElementById('dmNotesContainer').style.display = 'block';
+              dmButton.style.display = 'none';
+          } else {
+              alert('Wrong Password!');
+          }
+      } catch (e) {
+          alert('Wrong Password!');
+          console.error(e);
+      }
+    });
+
+    // Player Notes Save
+    const notesKey = 'jorvik_notes';
+    const textarea = document.getElementById('notes');
+    const saveButton = document.getElementById('saveNotes');
+
+    textarea.value = localStorage.getItem(notesKey) || '';
+
+    saveButton.addEventListener('click', () => {
+      localStorage.setItem(notesKey, textarea.value);
+      alert('Notes saved!');
+    });
+  </script>
+</body>
+</html>
